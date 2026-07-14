@@ -1,1 +1,15 @@
-<h1>hello</h1> 
+<button id="start">Start</button>
+<div id="output">waiting</div>
+
+<script>
+  const btn = document.getElementById("start");
+  const out = document.getElementById("output");
+
+  btn.addEventListener("click", function () {
+    DeviceMotionEvent.requestPermission();
+    window.addEventListener("devicemotion", function (event) {
+      const a = event.accelerationIncludingGravity;
+      out.textContent = a.x + " | " + a.y + " | " + a.z;
+    });
+  });
+</script>
