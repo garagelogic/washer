@@ -11,7 +11,7 @@
       const a = event.accelerationIncludingGravity;
       const mag = Math.sqrt(a.x * a.x + a.y * a.y + a.z * a.z);
       const shake = Math.abs(mag - 9.8);
-      out.textContent = a.x + " | " + a.y + " | " + a.z;
+      out.textContent = shake.toFixed(2);
     });
   });
 </script>
